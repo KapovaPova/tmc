@@ -14,4 +14,8 @@ add_executable(main main.cpp
         minus.cpp
         minus.h
         while.cpp
-        while.h)
+        while.h
+        next_var.cpp
+        next_var.h
+        prev_var.cpp
+        prev_var.h)

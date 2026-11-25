@@ -4,7 +4,13 @@
 
 int main() {
     Program program = generator();
-    Tape tape = {Symbol::Zero, Symbol::Zero, Symbol::One, Symbol::Blank};
+    Tape tape = {
+        Symbol::Blank, // разделитель
+        Symbol::Zero, Symbol::Zero, Symbol::Zero, Symbol::One, //переменная 0
+        Symbol::Blank, // разделитель
+        Symbol::Zero, Symbol::Zero, Symbol::Zero, Symbol::One, //переменная 1
+        Symbol::Blank // разделитель
+    };
 
     run(program, tape);
 
