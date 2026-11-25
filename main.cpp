@@ -4,10 +4,13 @@
 
 int main() {
     Program program = generator();
-    Tape tape = {Symbol::Zero, Symbol::Zero, Symbol::One};
+    Tape tape = {Symbol::Zero, Symbol::Zero, Symbol::One, Symbol::Blank};
 
     run(program, tape);
 
-    for (auto s : tape) std::cout << static_cast<int>(s);
-    std::cout << std::endl;
+    for (auto s: tape) {
+        if (s == Symbol::Blank) std::cout << '_';
+        else if (s == Symbol::Zero) std::cout << '0';
+        else std::cout << '1';
+    }
 }

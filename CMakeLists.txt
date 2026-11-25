@@ -8,4 +8,10 @@ add_executable(main main.cpp
         machine.cpp
         machine.h
         generator.cpp
-        generator.h)
+        generator.h
+        plus.cpp
+        plus.h
+        minus.cpp
+        minus.h
+        while.cpp
+        while.h)

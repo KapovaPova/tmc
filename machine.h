@@ -8,6 +8,6 @@
 
 // Выполняет программу над лентой до остановки (next == -1).
 // tape меняется на месте, результат остаётся у вызывающего.
-void run(const std::vector<State>& program, std::vector<Symbol>& tape);
+void run(const std::vector<State> &program, std::vector<Symbol> &tape);
 
 #endif //MAIN_MACHINE_H

@@ -6,7 +6,7 @@
 
 // Выполняет программу над лентой до остановки (next == -1).
 // tape меняется на месте, результат остаётся у вызывающего.
-void run(const std::vector<State>& program, std::vector<Symbol>& tape) {
+void run(const std::vector<State> &program, std::vector<Symbol> &tape) {
     // pos - индекс клетки, над которой сейчас стоит головка.
     // Начинаем с самой левой клетки.
     size_t pos = 0;
@@ -22,10 +22,10 @@ void run(const std::vector<State>& program, std::vector<Symbol>& tape) {
         // Берём его ДО записи в ленту: после записи символ под головкой
         // уже новый, и мы бы искали не то правило.
         // Ссылка (&), чтобы не копировать структуру.
-        const Rule& rule = program[state][static_cast<size_t>(tape[pos])];
+        const Rule &rule = program[state][static_cast<size_t>(tape[pos])];
 
-        tape[pos] = rule.write;  // пишем новый символ поверх старого
-        state = rule.next;       // переходим в следующее состояние
+        tape[pos] = rule.write; // пишем новый символ поверх старого
+        state = rule.next; // переходим в следующее состояние
 
         if (rule.move == Action::Left) {
             if (pos == 0) {
@@ -35,10 +35,10 @@ void run(const std::vector<State>& program, std::vector<Symbol>& tape) {
                 // на новую клетку.
                 tape.insert(tape.begin(), Symbol::Blank);
             } else {
-                --pos;  // обычный шаг влево внутри ленты
+                --pos; // обычный шаг влево внутри ленты
             }
         } else if (rule.move == Action::Right) {
-            ++pos;  // шаг вправо
+            ++pos; // шаг вправо
             // Если ушли за правый край - дописываем пустую клетку в конец,
             // чтобы под головкой снова была существующая клетка.
             if (pos == tape.size()) tape.push_back(Symbol::Blank);
