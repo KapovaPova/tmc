@@ -10,6 +10,8 @@
 #include "prev_var.h"
 #include "plus.h"
 #include "while.h"
+#include "while_start.h"
+#include "while_end.h"
 
 Program generator() {
     int start = 1; // команда, с которой начать и куда писать после
@@ -33,13 +35,23 @@ Program generator() {
     // prev_var(program, start);
     // plus(program, start);
 
-    int a = 0, b = 1; // индексы переменных
+    // int a = 0, b = 1; // индексы переменных
+    //
+    // go_to(program, start, current_var, b);
+    // minus(program, start);
+    //
+    // go_to(program, start, current_var, a);
+    // plus(program, start);
 
-    go_to(program, start, current_var, b);
-    minus(program, start);
+    int a = 0, b = 1;
 
-    go_to(program, start, current_var, a);
-    plus(program, start);
+    go_to(program, start, current_var, b); // встаём на b
+    int loop = while_start(program, start); // while (b != 0) {
+    minus(program, start); //     b--;
+    go_to(program, start, current_var, a); //     переходим на a
+    plus(program, start); //     a++;
+    go_to(program, start, current_var, b); //     возвращаемся на b для следующей проверки
+    while_end(program, start, loop); // }
 
     //конец
     program.emplace_back(

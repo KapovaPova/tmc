@@ -20,4 +20,8 @@ add_executable(main main.cpp
         prev_var.cpp
         prev_var.h
         go_to.cpp
-        go_to.h)
+        go_to.h
+        while_start.cpp
+        while_start.h
+        while_end.cpp
+        while_end.h)
