@@ -4,6 +4,7 @@
 
 #include "generator.h"
 
+#include "go_to.h"
 #include "minus.h"
 #include "next_var.h"
 #include "prev_var.h"
@@ -12,6 +13,7 @@
 
 Program generator() {
     int start = 1; // команда, с которой начать и куда писать после
+    int current_var = 0; // индекс текущей переменной
     Program program; // программа
     program.emplace_back(
         State{
@@ -25,10 +27,18 @@ Program generator() {
     //minus(program, start);
     //while_loop(program, start);
 
-    plus(program, start);
-    next_var(program, start);
-    plus(program, start);
-    prev_var(program, start);
+    // plus(program, start);
+    // next_var(program, start);
+    // plus(program, start);
+    // prev_var(program, start);
+    // plus(program, start);
+
+    int a = 0, b = 1; // индексы переменных
+
+    go_to(program, start, current_var, b);
+    minus(program, start);
+
+    go_to(program, start, current_var, a);
     plus(program, start);
 
     //конец

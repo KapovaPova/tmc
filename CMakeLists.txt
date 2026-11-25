@@ -18,4 +18,6 @@ add_executable(main main.cpp
         next_var.cpp
         next_var.h
         prev_var.cpp
-        prev_var.h)
+        prev_var.h
+        go_to.cpp
+        go_to.h)
