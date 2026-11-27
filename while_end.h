@@ -6,6 +6,6 @@
 #define MAIN_WHILE_END_H
 #include "types.h"
 
-void while_end(Program &program, int &start, const int &loop);
+void while_end(Program &program, int &start, int &current_var, const Loop &loop);
 
 #endif //MAIN_WHILE_END_H

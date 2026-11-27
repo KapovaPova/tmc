@@ -25,33 +25,13 @@ Program generator() {
         }
     ); // ставим указатель на 1 переменную
 
-    //plus(program, start);
-    //minus(program, start);
-    //while_loop(program, start);
-
-    // plus(program, start);
-    // next_var(program, start);
-    // plus(program, start);
-    // prev_var(program, start);
-    // plus(program, start);
-
-    // int a = 0, b = 1; // индексы переменных
-    //
-    // go_to(program, start, current_var, b);
-    // minus(program, start);
-    //
-    // go_to(program, start, current_var, a);
-    // plus(program, start);
-
     int a = 0, b = 1;
 
-    go_to(program, start, current_var, b); // встаём на b
-    int loop = while_start(program, start); // while (b != 0) {
+    Loop loop = while_start(program, start, current_var, b); // while (b != 0) {
     minus(program, start); //     b--;
     go_to(program, start, current_var, a); //     переходим на a
     plus(program, start); //     a++;
-    go_to(program, start, current_var, b); //     возвращаемся на b для следующей проверки
-    while_end(program, start, loop); // }
+    while_end(program, start, current_var, loop); // }
 
     //конец
     program.emplace_back(

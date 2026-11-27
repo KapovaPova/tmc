@@ -6,6 +6,6 @@
 #define MAIN_WHILE_START_H
 #include "types.h"
 
-int while_start(Program &program, int &start);
+Loop while_start(Program &program, int &start, int &current_var, const int &target_var);
 
 #endif //MAIN_WHILE_START_H
