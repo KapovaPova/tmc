@@ -6,6 +6,6 @@
 #define MAIN_MINUS_H
 #include "types.h"
 
-void minus(Program &program, int &start);
+void minus(Program &program, int &start, int &current_var, const int &target_var);
 
 #endif //MAIN_MINUS_H

@@ -6,6 +6,6 @@
 #define MAIN_PLUS_H
 #include "types.h"
 
-void plus(Program &program, int &start);
+void plus(Program &program, int &start, int &current_var, const int &target_var);
 
 #endif //MAIN_PLUS_H

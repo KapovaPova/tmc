@@ -28,9 +28,8 @@ Program generator() {
     int a = 0, b = 1;
 
     Loop loop = while_start(program, start, current_var, b); // while (b != 0) {
-    minus(program, start); //     b--;
-    go_to(program, start, current_var, a); //     переходим на a
-    plus(program, start); //     a++;
+    minus(program, start, current_var, b); //     b--;
+    plus(program, start, current_var, a); //     a++;
     while_end(program, start, current_var, loop); // }
 
     //конец

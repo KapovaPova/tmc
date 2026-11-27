@@ -4,7 +4,11 @@
 
 #include "minus.h"
 
-void minus(Program &program, int &start) {
+#include "go_to.h"
+
+void minus(Program &program, int &start, int &current_var, const int &target_var) {
+    go_to(program, start, current_var, target_var);
+
     program.emplace_back(
         State{
             Rule{Symbol::Blank, Action::Left, start + 1}, // нашли конечный символ, идем вычитать 1
