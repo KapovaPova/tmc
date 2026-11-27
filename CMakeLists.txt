@@ -22,4 +22,8 @@ add_executable(main main.cpp
         while_start.cpp
         while_start.h
         while_end.cpp
-        while_end.h)
+        while_end.h
+        encode.cpp
+        encode.h
+        decode.cpp
+        decode.h)
