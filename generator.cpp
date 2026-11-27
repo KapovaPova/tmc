@@ -6,10 +6,7 @@
 
 #include "go_to.h"
 #include "minus.h"
-#include "next_var.h"
-#include "prev_var.h"
 #include "plus.h"
-#include "while.h"
 #include "while_start.h"
 #include "while_end.h"
 
